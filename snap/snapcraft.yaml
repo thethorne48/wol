@@ -15,7 +15,7 @@ parts:
     # go-packages:
     #   - github.com/thethorne48/wol/packet
     go-importpath: github.com/thethorne48/wol
-    source: src
+    source: .
     source-type: git
     source-branch: dev
     
