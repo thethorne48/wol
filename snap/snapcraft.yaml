@@ -15,7 +15,7 @@ parts:
     go-importpath: github.com/thethorne48/wol
     source: .
     source-type: git
-    source-branch: dev
+    source-branch: test
     
 apps:
   goWol:
