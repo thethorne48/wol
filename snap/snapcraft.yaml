@@ -20,3 +20,6 @@ parts:
 apps:
   goWol:
     command: bin/wol
+    plugs:
+      - network-control
+      - network-bind
