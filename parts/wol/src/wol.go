@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"wol/packet"
 )
 
 var port int
@@ -12,7 +14,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var mac = r.URL.Query().Get("mac")
 		fmt.Fprintf(w, "Broadcasting WOL request")
-		if err := SendMagicPacket(mac); err != nil {
+		if err := packet.SendMagicPacket(mac); err != nil {
 			panic(err)
 		}
 	})
