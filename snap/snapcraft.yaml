@@ -1,11 +1,12 @@
 name: gowol
 version: 0.1+git
+icon: gowol.png
 summary: A quick and easy way to wake up a computer via a snap
 description: |
   GoWoL lets you send a WoL request from outside a network.
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict
 
 base: core18
 
@@ -15,7 +16,6 @@ parts:
     go-importpath: github.com/thethorne48/wol
     source: .
     source-type: git
-    source-branch: test
     
 apps:
   goWol:
