@@ -12,8 +12,6 @@ base: core18
 parts:
   wol:
     plugin: go
-    # go-packages:
-    #   - github.com/thethorne48/wol/packet
     go-importpath: github.com/thethorne48/wol
     source: .
     source-type: git
