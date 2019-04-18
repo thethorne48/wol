@@ -8,7 +8,7 @@ import (
 var port int
 
 func main() {
-	port = 8080
+	port = 80
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var mac = r.URL.Query().Get("mac")
 		fmt.Fprintf(w, "Broadcasting WOL request")
