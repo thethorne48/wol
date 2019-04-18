@@ -9,13 +9,13 @@ confinement: devmode
 
 base: core18
 
-parts:
-  wol:
-    plugin: go
-    go-importpath: github.com/thethorne48/wol
-    source: .
-    source-type: git
-    source-branch: test
+# parts:
+#   wol:
+#     plugin: go
+#     go-importpath: github.com/thethorne48/wol
+#     source: .
+#     source-type: git
+#     source-branch: test
     
 apps:
   goWol:
