@@ -1,0 +1,7 @@
+name: HTTP-WoL
+version: git
+summary: A quick and easy way to wake up a computer via a snap
+description: |
+  HTTP-WoL lets you send a WoL request from outside a network.
+confinement: devmode
+base: core18
