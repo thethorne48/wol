@@ -1,5 +1,5 @@
 name: gowol
-version: 0.1+git
+version: 0.1.1+git
 icon: gowol.png
 summary: A quick and easy way to wake up a computer via a snap
 description: |
@@ -29,5 +29,5 @@ apps:
   goWol:
     command: bin/wol
     plugs:
-      - network-control
+      - network
       - network-bind

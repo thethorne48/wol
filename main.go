@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+
+	"github.com/thethorne48/wol/magic"
 )
 
 var port int
@@ -22,8 +24,8 @@ func main() {
 	}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var mac = r.URL.Query().Get("mac")
-		fmt.Fprintf(w, "Broadcasting WOL request")
-		if err := SendMagicPacket(mac); err != nil {
+		fmt.Fprintf(w, "Broadcasting WOL request to %s", mac)
+		if err := magic.SendMagicPacket(mac); err != nil {
 			panic(err)
 		}
 	})
