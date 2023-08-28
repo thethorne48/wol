@@ -1,3 +1,6 @@
-[![Snap Status](https://build.snapcraft.io/badge/thethorne48/wol.svg)](https://build.snapcraft.io/user/thethorne48/wol)
-# http-wol
+[![gowol](https://snapcraft.io/gowol/badge.svg)](https://snapcraft.io/gowol)
+
+# GoWoL
 Wake-On-Lan simple Go server
+
+

@@ -9,14 +9,17 @@ import (
 	"regexp"
 )
 
-// MacAddress is 6 bytes in a row
-type MacAddress [6]byte
+// Segment is 6 bytes
+type Segment [6]byte
+
+// MacAddress is 16 Segments
+type MacAddress [16]Segment
 
 // MagicPacket is constituted of 6 bytes of 0xFF followed by
 // 16 groups of the destination MAC address.
 type MagicPacket struct {
-	header  [6]byte
-	payload [16]MacAddress
+	header  Segment
+	payload MacAddress
 }
 
 // Define globals for MacAddress parsing
@@ -30,7 +33,7 @@ var (
 // contains 6 bytes of 0xFF followed by 16 repetitions of a given mac address.
 func NewMagicPacket(mac string) (*MagicPacket, error) {
 	var packet MagicPacket
-	var macAddr MacAddress
+	var macAddr Segment
 
 	// We only support 6 byte MAC addresses
 	if !reMAC.MatchString(mac) {
@@ -75,7 +78,7 @@ func SendMagicPacket(macAddr string) error {
 	// Get a UDPAddr to send the broadcast to
 	udpAddr, err := net.ResolveUDPAddr("udp", "255.255.255.255:9")
 	if err != nil {
-		fmt.Printf("Unable to get a UDP address for %s\n", "255.255.255.255:9")
+		fmt.Printf("Unable to get a UDP address for %s:%d\n", udpAddr.IP.String(), udpAddr.Port)
 		return err
 	}
 
