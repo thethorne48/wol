@@ -27,7 +27,7 @@ parts:
 
 apps:
   goWol:
-    command: bin/wol
+    command: bin/gowol
     plugs:
       - network
       - network-bind
