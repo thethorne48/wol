@@ -19,7 +19,7 @@ architectures:
 
 apps:
   goWol:
-    command: bin/gowol
+    command: bin/wol
     plugs:
       - network
       - network-bind
