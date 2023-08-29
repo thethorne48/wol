@@ -17,6 +17,13 @@ architectures:
   - build-on: s390x
   - build-on: ppc64el
 
+apps:
+  goWol:
+    command: bin/gowol
+    plugs:
+      - network
+      - network-bind
+
 parts:
   wol:
     plugin: go
@@ -24,10 +31,3 @@ parts:
     source: https://github.com/thethorne48/wol
     build-snaps:
       - go
-
-apps:
-  goWol:
-    command: bin/gowol
-    plugs:
-      - network
-      - network-bind
