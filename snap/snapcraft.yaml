@@ -1,25 +1,26 @@
 name: gowol
-version: 0.1.1+git
+version: "0.1.1+git"
 icon: gowol.png
+license: MIT
 summary: A quick and easy way to wake up a computer via a snap
 description: |
-  GoWoL lets you send a WoL request from outside a network.
+  GoWoL lets you send a Wake-on-LAN request from anywhere you can access the server running this snap.
 
-grade: stable # must be 'stable' to release into candidate/stable channels
+grade: stable
 confinement: strict
 
 base: core22
 
 architectures:
   - build-on: arm64
-  - build-on: armhf
   - build-on: amd64
+  - build-on: armhf
   - build-on: s390x
   - build-on: ppc64el
 
 apps:
-  goWol:
-    command: bin/wol
+  server:
+    command: $SNAP/bin/wol
     plugs:
       - network
       - network-bind
@@ -28,6 +29,6 @@ parts:
   wol:
     plugin: go
     source-type: git
-    source: https://github.com/thethorne48/wol
+    source: ../..
     build-snaps:
-      - go
+      - go/latest/stable
