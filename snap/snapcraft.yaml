@@ -1,5 +1,5 @@
 name: gowol
-version: "0.1.1+git"
+version: "0.1.2+git"
 icon: gowol.png
 license: MIT
 summary: A quick and easy way to wake up a computer via a snap
@@ -9,7 +9,7 @@ description: |
 grade: stable
 confinement: strict
 
-base: core22
+base: core
 
 architectures:
   - build-on: arm64
