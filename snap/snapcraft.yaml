@@ -28,7 +28,7 @@ apps:
 parts:
   wol:
     plugin: go
-    source-type: git
+    source-type: local
     source: ../..
     build-snaps:
       - go/latest/stable
